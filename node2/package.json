@@ -1,0 +1,14 @@
+{
+  "name": "sraka",
+  "version": "1.0.0",
+  "description": "nahuj",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ss"
+  ],
+  "author": "daniel",
+  "license": "ISC"
+}
