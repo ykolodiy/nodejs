@@ -1,0 +1,5 @@
+Blocking Code Example
+Create a text file named input.txt with the following content -
+
+Tutorials Point is giving self learning content
+to teach the world in simple and easy way!!!!!
