@@ -7,7 +7,7 @@ const mail = nodemailer.createTransport({
         pass: '',
     },
 });
-
+// https://nodemailer.com/smtp/well-known/
 const mailOptions = {
     from: '@gmail.com',
     to: '',
