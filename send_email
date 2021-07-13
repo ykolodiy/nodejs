@@ -25,3 +25,26 @@ mail.sendMail(mailOptions, (error, info) => {
     }
 });
 // https://morioh.com/p/ca75996654d1
+
+
+
+
+if u want loop
+
+let intervalId = null;
+let varCounter = 1;
+const varName = function () {
+    if (varCounter <= 30) {
+        varCounter++;
+        mail.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(`Email sent: ${info.response} number ${varCounter}`);
+            }
+        });
+    } else {
+        clearInterval(intervalId);
+    }
+};
+intervalId = setInterval(varName, 2000);
