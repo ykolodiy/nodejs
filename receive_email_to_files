@@ -28,7 +28,7 @@ imap.once('ready', () => {
         if (err) throw err;
         // Change the date with the one from which you want receive emails
         // Unseen means you'll only get mails that are unseen
-        imap.search(['UNSEEN', ['SINCE', 'July 27, 2021']], (err, results) => {
+        imap.search(['ALL', ['SINCE', 'July 27, 2021']], (err, results) => {
             if (err) throw err;
             const f = imap.fetch(results, { bodies: '' });
             f.on('message', (msg, seqno) => {
