@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
+// TUTORIAL https://github.com/mscdex/node-imap
 // https://github.com/accakks/Sending-and-Receiving-Emails-using-node.js/blob/master/receiver.js
 const Imap = require('imap');
 const { inspect } = require('util');
