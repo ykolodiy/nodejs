@@ -1,0 +1,31 @@
+const imaps = require('imap-simple');
+
+const config = {
+    imap: {
+        user: 'dddd@ssdsd.sdsdsd',
+        password: 'dddd',
+        host: 'imap.gmail.com',
+        port: 993,
+        tls: true,
+        tlsOptions: { rejectUnauthorized: false },
+        authTimeout: 3000,
+    },
+};
+
+imaps.connect(config).then((connection) => connection.openBox('INBOX').then(() => {
+    const searchCriteria = [
+        'UNSEEN',
+    ];
+
+    const fetchOptions = {
+        bodies: ['HEADER', 'TEXT'],
+        markSeen: false,
+    };
+
+    return connection.search(searchCriteria, fetchOptions).then((results) => {
+        const subjects = results.map((res) => res.parts.filter((part) => part.which === 'HEADER')[0].body.subject[0]);
+
+        console.log(subjects[1]);
+        connection.end();
+    });
+}));
