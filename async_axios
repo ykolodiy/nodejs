@@ -1,0 +1,13 @@
+describe('some api tests', () => {
+    it('should behave.with axios.', async () => {
+        const data = await axios({
+          url: 'http://api.icndb.com/jokes/random/',
+        }).then(response => response.data);
+    
+        console.log(data);
+      });
+    it("api 2", () => {
+    })
+    it('api 3', () => {
+    });
+});
