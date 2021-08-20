@@ -1,5 +1,5 @@
 const imaps = require('imap-simple');
-
+https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-8361e398-8af4-4e97-b147-6c6c4ac95353
 const config = {
     imap: {
         user: 'dddd@ssdsd.sdsdsd',
