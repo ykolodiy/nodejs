@@ -4,7 +4,7 @@ const config = {
     imap: {
         user: 'dddd@ssdsd.sdsdsd',
         password: 'dddd',
-        host: 'imap.gmail.com',
+        host: 'outlook.office365.com',
         port: 993,
         tls: true,
         tlsOptions: { rejectUnauthorized: false },
