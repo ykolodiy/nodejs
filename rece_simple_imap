@@ -13,8 +13,12 @@ const config = {
 };
 
 imaps.connect(config).then((connection) => connection.openBox('INBOX').then(() => {
+    const delay = 24 * 3600 * 1000;
+    let yesterday = new Date();
+    yesterday.setTime(Date.now() - delay);
+    yesterday = yesterday.toISOString();
     const searchCriteria = [
-        'UNSEEN',
+        'ALL', ['SINCE', yesterday],
     ];
 
     const fetchOptions = {
