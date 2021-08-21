@@ -6,6 +6,11 @@ imaps.connect(config).then((connection) => connection.openBox('INBOX').then(() =
     const searchCriteria = [
         'ALL', ['SINCE', yesterday],
     ];
+    /*
+        const searchCriteria = [
+        ['ON', 'August 20, 2021'],
+    ];
+    */
     const fetchOptions = {
         bodies: ['HEADER', 'TEXT'],
     };
