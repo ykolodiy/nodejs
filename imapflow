@@ -20,7 +20,7 @@ const main = async () => {
 
     await client.mailboxOpen('INBOX');
     // https://imapflow.com/global.html#SearchObject
-    const list = await client.search({ from: 'yuriy.kolodiy@grainger.com', subject: 'vvb1' });
+    const list = await client.search({ from: 'y.com', subject: 'vvb1' });
     console.log(`vvvv${list}`);
 
     // const list = await client.search({
