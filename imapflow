@@ -13,20 +13,21 @@ const client = new ImapFlow({
     },
 });
 
+
 const main = async () => {
     // Wait until client connects and authorizes
     await client.connect();
-    const lock = await client.getMailboxLock('INBOX', { unseen: true });
 
-    try {
-        const list = await client.search({
-            from: 'dsfsd@.com',
-            subject: 'kkkj4444',
-        });
-        console.log(list);
-    } finally {
-        lock.release();
-    }
+    await client.mailboxOpen('INBOX');
+    // https://imapflow.com/global.html#SearchObject
+    const list = await client.search({ from: 'yuriy.kolodiy@grainger.com', subject: 'vvb1' });
+    console.log(`vvvv${list}`);
+
+    // const list = await client.search({
+    //     from: 'yuriy.kolodiy@grainger.com',
+    //     subject: 'kkkj4444',
+    // });
+    // console.log(`zzz${list}`);
 
     // log out and close connection
     await client.logout();
