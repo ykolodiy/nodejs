@@ -1,0 +1,35 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-shadow */
+/* eslint-disable no-console */
+const { ImapFlow } = require('imapflow');
+
+const client = new ImapFlow({
+    host: 'outlook.office365.com',
+    port: 993,
+    secure: true,
+    auth: {
+        user: '',
+        pass: '!',
+    },
+});
+
+const main = async () => {
+    // Wait until client connects and authorizes
+    await client.connect();
+    const lock = await client.getMailboxLock('INBOX', { unseen: true });
+
+    try {
+        const list = await client.search({
+            from: 'dsfsd@.com',
+            subject: 'kkkj4444',
+        });
+        console.log(list);
+    } finally {
+        lock.release();
+    }
+
+    // log out and close connection
+    await client.logout();
+};
+
+main().catch((err) => console.error(err));
